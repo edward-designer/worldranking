@@ -58,11 +58,11 @@ const Country = ({country}) =>{
                     </div>
                     <div className={styles.details_panel_row}>
                         <div className={styles.details_panel_label}>Language</div>
-                        <div className={styles.details_panel_value}>{Object.values(country.languages).join(", ")}</div>
+                        <div className={styles.details_panel_value}>{country.languages&&Object.values(country.languages).join(", ")}</div>
                     </div>
                     <div className={styles.details_panel_row}>
                         <div className={styles.details_panel_label}>Currencies</div>
-                        <div className={styles.details_panel_value}>{Object.values(country.currencies).map((currency)=>currency.name+" ("+currency.symbol+")").join(",")}</div>
+                        <div className={styles.details_panel_value}>{country.currencies&&Object.values(country.currencies).map((currency)=>currency.name+" ("+currency.symbol+")").join(",")}</div>
                     </div>                
                     <div className={styles.details_panel_row}>
                         <div className={styles.details_panel_label}>Official Name</div>
