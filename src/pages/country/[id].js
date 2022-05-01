@@ -23,7 +23,7 @@ const Country = ({country}) =>{
     }
     useEffect(() => {
         getBorders();
-    },borders);
+    },[country.cca3]);
 
     return (
     <Layout title={country.name.common}>
