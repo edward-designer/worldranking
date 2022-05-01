@@ -92,8 +92,21 @@ const Country = ({country}) =>{
 
 export default Country;
 
+export const getStaticPaths = async () => {
+    const res = await fetch('https://restcountries.com/v3.1/all');
+    const countries = await res.json();
 
-export const getServerSideProps = async ({params}) => { // use the params object derived from the routing URL
+    const paths = countries.map(country => ({
+        params: {id:country.cca3}
+    }));
+
+    return {
+        paths,
+        fallback: false
+    };
+}
+
+export const getStaticProps = async ({params}) => { // use the params object derived from the routing URL
     const country = await getCountry(params.id);
     return {
         props: {
