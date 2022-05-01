@@ -24,7 +24,7 @@ const Country = ({country}) =>{
     useEffect(() => {
         getBorders();
     },borders);
-    console.log(borders);
+
     return (
     <Layout title={country.name.common}>
         <div className={styles.container}>
@@ -97,12 +97,12 @@ export const getStaticPaths = async () => {
     const countries = await res.json();
 
     const paths = countries.map(country => ({
-        params: {id:country.cca3}
+        params: {id:country.cca3},
     }));
 
     return {
         paths,
-        fallback: false
+        fallback: false,
     };
 }
 
