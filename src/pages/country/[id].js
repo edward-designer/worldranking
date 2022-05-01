@@ -76,7 +76,7 @@ const Country = ({country}) =>{
                         <div className={styles.details_panel_borders_label}>Neighbouring Countries</div>
                         <div className={styles.details_panel_borders_container}>
                         {borders.length?borders.map(({flags,name,cca3})=>
-                            <Link href={`/country/${cca3}`}>
+                            <Link href={`/country/${cca3}`} key={name.common}>
                             <div key={name.common} className={styles.details_panel_borders_country}>
                                 <img src={flags.png} alt={name.common} />
                                 <div className={styles.details_panel_name}>{name.common}</div>
