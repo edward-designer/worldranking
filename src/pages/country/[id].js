@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import styles from "./Country.module.css";
-import Link from "next/Link";
+import Link from "next/link";
 
 const getCountry = async (id) => {
     const res = await fetch(`https://restcountries.com/v3.1/alpha/${id}`);
