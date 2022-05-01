@@ -8,8 +8,8 @@ const Layout = ({children, title = "World Ranks"}) => {
     const [themeColor, setThemeColor] = useState('light');
 
     useEffect(()=>{
-      document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'));
-      setThemeColor(localStorage.getItem('theme'));
+      if(!localStorage.getItem('theme')){saveThem('light');}
+        else {saveTheme(localStorage.getItem('theme'));}
     },[]);
 
     const switchTheme = () => {
