@@ -6,9 +6,22 @@
   --text-color-secondary: #b3c5cd;
   --primary-color: #21b6b7;
 
-  --background-color: #f9f9f9;
-  --background-color-light: #eef3f6;
+  --background-color: #eef3f6;
+  --background-color-light: #f9f9f9;
   --background-color-dark: #fff;
+
+  --font-family: "Poppins", sans-serif;
+  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] {
+  --text-color: #f0f0f0;
+  --text-color-secondary: #b3c5cd;
+  --primary-color: #21b6b7;
+
+  --background-color: #252329;
+  --background-color-light: #3c393f;
+  --background-color-dark: #120f13;
 
   --font-family: "Poppins", sans-serif;
   --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
