@@ -52,7 +52,7 @@ const Layout = ({children, title = "World Ranks"}) => {
           <main className={styles.main}>
            {children}
           </main>
-    
+
           <footer className={styles.footer}>
             edward-designer
           </footer>
