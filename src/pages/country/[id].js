@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import styles from "./Country.module.css";
 import Link from "next/link";
-import Loading from "../../components/Loading/Loading";
 
 const getCountry = async (id) => {
     const res = await fetch(`https://restcountries.com/v3.1/alpha/${id}`);
@@ -12,7 +11,6 @@ const getCountry = async (id) => {
 
 const Country = ({country}) =>{
     const [borders, setBorders] = useState([]);
-    const [showLoading, setShowLoading] = useState('show');
 
     const getBorders = async () =>{
         try{
@@ -21,17 +19,14 @@ const Country = ({country}) =>{
         }catch(e){
             console.log(e.message);
         }      
-        setShowLoading('hide');
     }
     
     useEffect(() => {
-        setShowLoading('show');
         getBorders();
     },[country.name.common]);
 
     return (
     <Layout title={country.name.common}>
-        <Loading showLoading={showLoading} />
         <div className={styles.container}>
             <div className={styles.container_left}>
                 <div className={styles.overview_panel}>

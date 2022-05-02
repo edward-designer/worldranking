@@ -1,11 +1,18 @@
 import styles from "./Loading.module.css";
 
-const loader = ({showLoading}) => {
-    return (
-      <div className={showLoading==='show'?styles.loaderContainer:styles.loaderContainerHide}>
-        <div className={styles.loader}></div>
+function Loading(props) {
+  return (
+    <div className={props.loading ? styles.body_loading : styles.none}>
+      <div
+        className={styles.lds_ellipsis}
+      >
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-    )
+    </div>
+  );
 }
 
-export default loader;
+export default Loading;
